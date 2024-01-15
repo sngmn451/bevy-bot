@@ -1,0 +1,1 @@
+ALTER TABLE "--slushy-fetch-creator" ADD COLUMN "contentDownloaded" boolean DEFAULT false;

@@ -1,0 +1,1 @@
+ALTER TABLE "--slushy-creator" ADD COLUMN "displayName" varchar;
