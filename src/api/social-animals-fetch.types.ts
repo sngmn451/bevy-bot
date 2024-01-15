@@ -1,13 +1,13 @@
 export interface FetchResponse {
-  data: Data
+  data: FetchResponseDataObject
   props: any[]
   envs: any[]
   taxonomies: any[]
 }
 
-export interface Data {
+export interface FetchResponseDataObject {
   current_page: number
-  data: Daum[]
+  data: FetchResponseData[]
   first_page_url: string
   from: number
   last_page: number
@@ -20,7 +20,7 @@ export interface Data {
   total: number
 }
 
-export interface Daum {
+export interface FetchResponseData {
   scientific_name: string
   id: number
   url: string

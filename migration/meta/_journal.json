@@ -50,6 +50,13 @@
       "when": 1704612187653,
       "tag": "0006_far_micromacro",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1705316241923,
+      "tag": "0007_amazing_rocket_racer",
+      "breakpoints": true
     }
   ]
 }

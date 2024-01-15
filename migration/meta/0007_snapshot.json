@@ -1,0 +1,725 @@
+{
+  "id": "c7d9e48c-2822-4c2d-bfa6-42b7c4f1cefb",
+  "prevId": "e2e938bd-05c6-4e75-9e3e-70252b84f6eb",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "--slushy-creator": {
+      "name": "--slushy-creator",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "subscriptions": {
+          "name": "subscriptions",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "price": {
+          "name": "price",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "displayName": {
+          "name": "displayName",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "handle": {
+          "name": "handle",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "followersCount": {
+          "name": "followersCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "follow": {
+          "name": "follow",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "postCount": {
+          "name": "postCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "postLikesCount": {
+          "name": "postLikesCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "displayAge": {
+          "name": "displayAge",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nationality": {
+          "name": "nationality",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "viewerCount": {
+          "name": "viewerCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "json": {
+          "name": "json",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "paginationId": {
+          "name": "paginationId",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idxSubPrice": {
+          "name": "idxSubPrice",
+          "columns": [
+            "id",
+            "subscriptions",
+            "price"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "--slushy-creator_id_unique": {
+          "name": "--slushy-creator_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "id"
+          ]
+        }
+      }
+    },
+    "--slushy-fetch-creator": {
+      "name": "--slushy-fetch-creator",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "displayName": {
+          "name": "displayName",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "handle": {
+          "name": "handle",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "followersCount": {
+          "name": "followersCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nonTeaserPremiumImagesCount": {
+          "name": "nonTeaserPremiumImagesCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nonTeaserPremiumVideosCount": {
+          "name": "nonTeaserPremiumVideosCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "subscriptionPlanCycle": {
+          "name": "subscriptionPlanCycle",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "subscriptionPlanPrice": {
+          "name": "subscriptionPlanPrice",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "subscriptionPlanSalePrice": {
+          "name": "subscriptionPlanSalePrice",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "subscriptionPlanDescription": {
+          "name": "subscriptionPlanDescription",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "socialProofPurchases": {
+          "name": "socialProofPurchases",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "socialProofSubscription": {
+          "name": "socialProofSubscription",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "socialProofTotalViewCount": {
+          "name": "socialProofTotalViewCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "follow": {
+          "name": "follow",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "slushyCreatedAt": {
+          "name": "slushyCreatedAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "postCount": {
+          "name": "postCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "postLikesCount": {
+          "name": "postLikesCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "displayAge": {
+          "name": "displayAge",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nationality": {
+          "name": "nationality",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "bio": {
+          "name": "bio",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "viewerCount": {
+          "name": "viewerCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "creatorAttributes": {
+          "name": "creatorAttributes",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "lastOfflineAt": {
+          "name": "lastOfflineAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "lastOnlineAt": {
+          "name": "lastOnlineAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "json": {
+          "name": "json",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "paginationId": {
+          "name": "paginationId",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "contentDownloaded": {
+          "name": "contentDownloaded",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idxSubscription": {
+          "name": "idxSubscription",
+          "columns": [
+            "subscriptionPlanPrice",
+            "socialProofSubscription"
+          ],
+          "isUnique": false
+        },
+        "idxAge": {
+          "name": "idxAge",
+          "columns": [
+            "displayAge"
+          ],
+          "isUnique": false
+        },
+        "idxNationality": {
+          "name": "idxNationality",
+          "columns": [
+            "nationality"
+          ],
+          "isUnique": false
+        },
+        "idxEngagement": {
+          "name": "idxEngagement",
+          "columns": [
+            "followersCount",
+            "postCount",
+            "postLikesCount",
+            "viewerCount",
+            "socialProofSubscription",
+            "socialProofTotalViewCount"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "--slushy-fetch-creator_id_unique": {
+          "name": "--slushy-fetch-creator_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "id"
+          ]
+        }
+      }
+    },
+    "--slushy-config": {
+      "name": "--slushy-config",
+      "schema": "",
+      "columns": {
+        "key": {
+          "name": "key",
+          "type": "varchar",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "value": {
+          "name": "value",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "--slushy-config_key_unique": {
+          "name": "--slushy-config_key_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "key"
+          ]
+        }
+      }
+    },
+    "--slushy-creator-feed": {
+      "name": "--slushy-creator-feed",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "creatorId": {
+          "name": "creatorId",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "caption": {
+          "name": "caption",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hasAdultContent": {
+          "name": "hasAdultContent",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "isPinned": {
+          "name": "isPinned",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hashTags": {
+          "name": "hashTags",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "type": {
+          "name": "type",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status": {
+          "name": "status",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "price": {
+          "name": "price",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "salesPrice": {
+          "name": "salesPrice",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "salesPriceExpiresAt": {
+          "name": "salesPriceExpiresAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "postContentType": {
+          "name": "postContentType",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "spicy": {
+          "name": "spicy",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "imagesCount": {
+          "name": "imagesCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "videosCount": {
+          "name": "videosCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "likesCount": {
+          "name": "likesCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "commentsCount": {
+          "name": "commentsCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "totalTipsAmount": {
+          "name": "totalTipsAmount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tipsCounter": {
+          "name": "tipsCounter",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "topLevelCommentCount": {
+          "name": "topLevelCommentCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "eventViewCount": {
+          "name": "eventViewCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "eventTotalPostViewCount": {
+          "name": "eventTotalPostViewCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "eventSubscriptionNew": {
+          "name": "eventSubscriptionNew",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "eventPurchaseCount": {
+          "name": "eventPurchaseCount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "eventPurchase": {
+          "name": "eventPurchase",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "json": {
+          "name": "json",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "publishedAt": {
+          "name": "publishedAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idxCreatorPostEvent": {
+          "name": "idxCreatorPostEvent",
+          "columns": [
+            "id",
+            "imagesCount",
+            "videosCount",
+            "likesCount",
+            "commentsCount",
+            "totalTipsAmount",
+            "eventViewCount",
+            "eventTotalPostViewCount",
+            "eventSubscriptionNew",
+            "eventPurchaseCount"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "--slushy-creator-feed_id_unique": {
+          "name": "--slushy-creator-feed_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "id"
+          ]
+        }
+      }
+    },
+    "config": {
+      "name": "config",
+      "schema": "",
+      "columns": {
+        "key": {
+          "name": "key",
+          "type": "varchar",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "value": {
+          "name": "value",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idxConfigKey": {
+          "name": "idxConfigKey",
+          "columns": [
+            "key"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "config_key_unique": {
+          "name": "config_key_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "key"
+          ]
+        }
+      }
+    },
+    "social-animals": {
+      "name": "social-animals",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "scientific_name": {
+          "name": "scientific_name",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "appearance": {
+          "name": "appearance",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "json": {
+          "name": "json",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idxSocialAnimalName": {
+          "name": "idxSocialAnimalName",
+          "columns": [
+            "id",
+            "title"
+          ],
+          "isUnique": false
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "social-animals_id_unique": {
+          "name": "social-animals_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "id"
+          ]
+        }
+      }
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

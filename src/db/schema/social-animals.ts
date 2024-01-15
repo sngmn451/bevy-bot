@@ -1,9 +1,9 @@
 import { index, integer, jsonb, pgTable, timestamp, varchar } from 'drizzle-orm/pg-core'
 
 export const SocialAnimals = pgTable('social-animals', {
-  id: varchar('id').unique().primaryKey(),
-  scientific_name: integer('scientific_name'),
-  title: integer('title'),
+  id: integer('id').unique().primaryKey(),
+  scientific_name: varchar('scientific_name'),
+  title: varchar('title'),
   appearance: varchar('appearance'),
   json: jsonb('json'),
   createdAt: timestamp('createdAt', { withTimezone: true}),
